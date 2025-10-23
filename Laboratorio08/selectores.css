@@ -1,0 +1,11 @@
+div.contenedor p {
+    color: blue;
+}
+
+div.contenedor h2 + p {
+    color: red;
+}
+
+div.contenedor h2 ~ p {
+    color: green;
+}

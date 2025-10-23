@@ -1,41 +1,84 @@
-h1{
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background-color: #0078a8;
+    padding: 10px 0;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-p::first-line {
+header h1 {
+    color: white;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
     font-weight: bold;
 }
 
-p::first-line {
-    font-weight: bold;
+nav a:hover {
+    text-decoration: underline;
 }
 
-p::first-letter {
-    font-size: 3em;
-    font-family: "Old English Text MT", "Goudy Old Style", serif;
-    float:left;
-    line-height: 0.5;
-    margin-right: 8px;
-    color: darkred;
+a:link {
+    color: green;
+    background-color: #e6ffe6;
 }
-
-::selection {
-    background: yellow;
+a:visited {
+    color: purple;
+    background-color: #f2e6ff;
+}
+a:hover {
     color: red;
+    background-color: #ffe6e6;
+}
+a:active {
+    color: orange;
+    background-color: #fff2e6;
 }
 
-.servicios {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.servicios::before {
-    content: " --->";
+div.contenedor p {
     color: blue;
 }
-
-.servicios::after {
-    content: " <---";
+div.contenedor h2 + p {
+    color: red;
+}
+div.contenedor h2 ~ p {
     color: green;
+}
+
+.tareas li {
+    list-style: none;
+    padding: 8px;
+}
+
+.tareas li:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+.tareas li:nth-child(even) {
+    background-color: #d9d9d9;
+}
+
+.tareas li::before {
+    content: "==> ";
+}
+
+.tareas li:hover {
+    cursor: pointer;
+    background-color: #e6e6e6;
+}
+
+.tareas li.hecha::after {
+    content: " \\/";
+    color: green;
+    font-weight: bold;
 }

@@ -1,0 +1,22 @@
+.tareas li:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+.tareas li:nth-child(even) {
+    background-color: #d9d9d9;
+}
+
+.tareas li::before {
+    content: "==> ";
+    color: #555;
+}
+
+.tareas li:hover {
+    cursor: pointer;
+    background-color: #e6e6e6;
+}
+
+.tareas li.hecha::after {
+    content: " \\/";
+    color: green;
+    font-weight: bold;
+}
