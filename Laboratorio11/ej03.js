@@ -1,10 +1,17 @@
-let nota1 = prompt("Ingresa la primera nota: ");
-let nota2 = prompt("Ingresa la segunda nota: ");
-let nota3 = prompt("Ingresa la tercera nota: ");
-let nota4 = prompt("Ingresa la cuarta nota: ");
-let nota5 = prompt("Ingresa la quinta nota: ");
+let suma = 0;
+let notasValidas = 0;
 
+for (let i = 1; i <= 5; i++) {
+  let nota =prompt("Ingresa la nota "+ i +" (0-20):");
 
-let promedio = (nota1 + nota2 + nota3 + nota4 + nota5)/5;
+  if (nota >= 0 && nota <= 20) {
+    suma += nota;
+    notasValidas++;
+  } else {
+    alert("Nota inválida.");
+    break;
+  }
+}
 
-console.log("El promedio ponderado es: " + promedio.toFixed(2));
+let promedio = suma / notasValidas;
+alert("Promedio: "+promedio);
