@@ -1,5 +1,5 @@
 
-let edad = prompt("Ingrese su edad: ");
+let edad = parseInt(prompt("Ingrese su edad: "));
 
 if (edad>=60){
     alert("Adulto mayor");
