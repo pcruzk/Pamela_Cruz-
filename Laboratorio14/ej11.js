@@ -57,7 +57,7 @@ class Producto {
   mostrarInfo() {
     alert("Producto: "+this.#nombre+
     "\nPrecio: $"+this.#precio+
-    "\nStock: " +this.#stock +"unidades");
+    "\nStock: " +this.#stock +" unidades");
   }
 }
 

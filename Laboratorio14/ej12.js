@@ -22,8 +22,8 @@ class Producto {
     return this.#stock;
   }
 
+  // Setters
   setPrecio(precio) {
-    // Convierte a número si viene como texto (por ejemplo, "120.5")
     let valor = Number(precio);
 
     if (!isNaN(valor) && valor > 0) {
@@ -63,14 +63,13 @@ class Producto {
   }
 }
 
-// Ejemplo de uso
 const producto1 = new Producto("Monitor LED", "120.5", 5);
 producto1.mostrarInfo();
 
-producto1.setPrecio(200);     // Acepta número
+producto1.setPrecio(200);    
 producto1.mostrarInfo();
 
-producto1.setPrecio("350.99"); // Acepta cadena
+producto1.setPrecio("350.99");
 producto1.mostrarInfo();
 
-producto1.setPrecio("-20");    // Rechazado
+producto1.setPrecio("-20");  

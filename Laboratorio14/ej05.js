@@ -1,4 +1,3 @@
-
 const lanzarDado = () =>{
     return (Math.round(Math.random()*6)+1);
 }
