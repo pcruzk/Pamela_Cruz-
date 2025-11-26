@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contador</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0;
+        }
+
+        .contador {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        #numero {
+            font-size: 60px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin: 5px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #3498db;
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1d6fa5;
+        }
+
+        #restar {
+            background: #e74c3c;
+        }
+
+        #restar:hover {
+            background: #b7382b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contador">
+        <div id="numero">0</div>
+
+        <button id="sumar">Sumar</button>
+        <button id="restar">Restar</button>
+    </div>
+
+    <script>
+        const numero = document.getElementById("numero");
+        const btnSumar = document.getElementById("sumar");
+        const btnRestar = document.getElementById("restar");
+
+        let valor = 0;
+
+        function actualizar() {
+            numero.textContent = valor;
+
+            // Cambiar color si es negativo
+            if (valor < 0) {
+                numero.style.color = "red";
+            } else {
+                numero.style.color = "black";
+            }
+        }
+
+        btnSumar.addEventListener("click", () => {
+            valor++;
+            actualizar();
+        });
+
+        btnRestar.addEventListener("click", () => {
+            valor--;
+            actualizar();
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cambiar color de fondo</title>
+
+    <style>
+        body {
+            transition: background-color 0.5s;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #1d6fa5;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btnColor">Cambiar color</button>
+
+    <script>
+        const btn = document.getElementById("btnColor");
+
+        function colorAleatorio() {
+            return "#" + Math.floor(Math.random() * 16777215).toString(16);
+        }
+
+        btn.addEventListener("click", () => {
+            document.body.style.backgroundColor = colorAleatorio();
+        });
+    </script>
+
+</body>
+</html>

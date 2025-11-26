@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validador de Formulario</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 40px;
+        }
+
+        .formulario {
+            width: 300px;
+            background: white;
+            padding: 20px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #999;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        input.error {
+            border-color: red;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #aea727;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #795e1b;
+        }
+
+        #mensaje {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="formulario">
+        <h2>Formulario</h2>
+
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="email" id="email" placeholder="Email">
+
+        <button id="btnEnviar">Enviar</button>
+
+        <p id="mensaje"></p>
+    </div>
+
+    <script>
+        const nombre = document.getElementById("nombre");
+        const email = document.getElementById("email");
+        const btn = document.getElementById("btnEnviar");
+        const mensaje = document.getElementById("mensaje");
+
+        btn.addEventListener("click", () => {
+            let valido = true;
+            mensaje.textContent = "";
+
+            // limpiar errores
+            nombre.classList.remove("error");
+            email.classList.remove("error");
+
+            // Valida campos vacíos
+            if (nombre.value.trim() === "") {
+                nombre.classList.add("error");
+                valido = false;
+            }
+            if (email.value.trim() === "") {
+                email.classList.add("error");
+                valido = false;
+            }
+
+            // Valida email
+            if (!email.value.includes("@")) {
+                email.classList.add("error");
+                valido = false;
+            }
+
+            // Mensaje final
+            if (!valido) {
+                mensaje.textContent = "Por favor, corrige los campos marcados.";
+                mensaje.style.color = "red";
+            } else {
+                mensaje.textContent = "Formulario enviado correctamente.";
+                mensaje.style.color = "green";
+            }
+        });
+    </script>
+
+</body>
+</html>

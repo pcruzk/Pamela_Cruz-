@@ -1,5 +1,3 @@
-// Colaboré con ChatGPT
-
 const cuadro = document.getElementById("cuadro");
 
 document.getElementById("btnMover").addEventListener("click", () => {

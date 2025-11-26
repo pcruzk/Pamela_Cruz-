@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Galería BOYNEXTDOOR</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            text-align: center;
+        }
+
+        #imagenGrande {
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+
+        .miniaturas {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .miniaturas img {
+            width: 100px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .miniaturas img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Galería BOYNEXTDOOR</h2>
+
+    <!-- Imagen grande -->
+    <img id="imagenGrande" src="https://i.pinimg.com/1200x/10/0a/0f/100a0fdbacb7fe953d3bbcf95cef59ef.jpg">
+
+    <!-- Miniaturas -->
+    <div class="miniaturas">
+        <img src="https://i.pinimg.com/736x/25/e8/7e/25e87e52813092fe8f787f3fcc764399.jpg" data-img="https://i.pinimg.com/736x/25/e8/7e/25e87e52813092fe8f787f3fcc764399.jpg">
+        <img src="https://i.pinimg.com/736x/d3/6d/3d/d36d3ddae032f6ca0aefa015e330003a.jpg" data-img="https://i.pinimg.com/736x/d3/6d/3d/d36d3ddae032f6ca0aefa015e330003a.jpg">
+        <img src="https://i.pinimg.com/1200x/02/31/97/023197530263bffe709f5770f08499b2.jpg" data-img="https://i.pinimg.com/1200x/02/31/97/023197530263bffe709f5770f08499b2.jpg">
+        <img src="https://i.pinimg.com/1200x/ab/ea/92/abea92690367f1a5b1cab845efaabed7.jpg" data-img="https://i.pinimg.com/1200x/ab/ea/92/abea92690367f1a5b1cab845efaabed7.jpg">
+
+    <script>
+        const imagenGrande = document.getElementById("imagenGrande");
+        const miniaturas = document.querySelectorAll(".miniaturas img");
+
+        miniaturas.forEach(mini => {
+            mini.addEventListener("click", () => {
+                imagenGrande.src = mini.dataset.img;
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú Desplegable</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+
+        #btnMenu {
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #btnMenu:hover {
+            background: #1f6fa1;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .contenido-menu {
+            position: absolute;
+            top: 45px;
+            left: 0;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 150px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            display: none; /* Oculto */
+        }
+
+        .contenido-menu a {
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .contenido-menu a:hover {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dropdown">
+        <button id="btnMenu">Menú</button>
+
+        <div class="contenido-menu" id="menu">
+            <a href="#">Opción 1</a>
+            <a href="#">Opción 2</a>
+            <a href="#">Opción 3</a>
+        </div>
+    </div>
+
+    <script>
+        const btnMenu = document.getElementById("btnMenu");
+        const menu = document.getElementById("menu");
+
+        btnMenu.addEventListener("click", () => {
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        });
+
+        // Cerrar al hacer clic fuera
+        document.addEventListener("click", (e) => {
+            if (!e.target.closest(".dropdown")) {
+                menu.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>

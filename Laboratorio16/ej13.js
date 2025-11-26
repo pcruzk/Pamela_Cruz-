@@ -1,5 +1,3 @@
-// Colaboré con ChatGPT
-
 const tabla = document.getElementById("tabla");
 let usuarios = [];
 
