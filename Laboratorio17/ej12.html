@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Ej 12</title></head>
+<body>
+<h3>Ej 12 - procesarLista (callback)</h3>
+<pre id="out"></pre>
+<script>
+const out = s => document.getElementById('out').textContent += s + '\n';
+
+function procesarLista(arr, callbackFinal) {
+  let pendientes = arr.length;
+  if (pendientes === 0) {
+    callbackFinal('Proceso completado');
+    return;
+  }
+  arr.forEach(num => {
+    const delay = Math.random() * (1500 - 500) + 500;
+    setTimeout(() => {
+      out(`Procesando ${num}...`);
+      pendientes--;
+      if (pendientes === 0) {
+        callbackFinal('Proceso completado');
+      }
+    }, delay);
+  });
+}
+
+procesarLista([1,2,3,4], mensaje => out(mensaje));
+</script>
+</body>
+</html>

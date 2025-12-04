@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Ej 13</title></head>
+<body>
+<h3>Ej 13 - cargarMensaje (Promesa)</h3>
+<pre id="out"></pre>
+<script>
+const out = s => document.getElementById('out').textContent += s + '\n';
+
+function cargarMensajePromesa() {
+  return new Promise(resolve => {
+    setTimeout(() => resolve('Mensaje cargado'), 1000);
+  });
+}
+
+cargarMensajePromesa().then(msg => out(msg));
+</script>
+</body>
+</html>

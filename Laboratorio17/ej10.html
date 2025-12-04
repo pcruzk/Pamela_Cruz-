@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Ej 10</title></head>
+<body>
+<h3>Ej 10 - cargarUsuario (callback)</h3>
+<pre id="out"></pre>
+<script>
+const out = s => document.getElementById('out').textContent += s + '\n';
+
+function cargarUsuario(callback) {
+  const delay = Math.random() * (1500 - 800) + 800;
+  setTimeout(() => {
+    const usuario = { id: 1, nombre: 'Juancito' };
+    callback(usuario);
+  }, delay);
+}
+
+cargarUsuario(u => out(`Usuario cargado: ${u.nombre} (ID: ${u.id})`));
+</script>
+</body>
+</html>

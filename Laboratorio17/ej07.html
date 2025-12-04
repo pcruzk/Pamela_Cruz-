@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Ej 7</title></head>
+<body>
+<h3>Ej 7 - Provocar TypeError y verificar con instanceof</h3>
+<pre id="out"></pre>
+<script>
+const out = s => document.getElementById('out').textContent += s + '\n';
+
+try {
+  let x = null;
+  x.nombre.toUpperCase();
+} catch (e) {
+  if (e instanceof TypeError) {
+    out('Se capturó TypeError: ' + e.message);
+  } else {
+    out('Otro error: ' + e.message);
+  }
+}
+</script>
+</body>
+</html>

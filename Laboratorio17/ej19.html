@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Ej 19</title></head>
+<body>
+<h3>Ej 19 - dividirAsync (async/await)</h3>
+<pre id="out"></pre>
+<script>
+const out = s => document.getElementById('out').textContent += s + '\n';
+
+function dividirPromesa(a,b) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (b === 0) reject(new Error('No se puede dividir entre cero'));
+      else resolve(a / b);
+    }, 1500);
+  });
+}
+
+(async function() {
+  try {
+    const r1 = await dividirPromesa(10, 2);
+    out('Resultado: ' + r1);
+    await dividirPromesa(5, 0);
+  } catch (e) {
+    out('Error: ' + e.message);
+  }
+})();
+</script>
+</body>
+</html>

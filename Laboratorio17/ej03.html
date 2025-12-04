@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Ej 3</title></head>
+<body>
+<h3>Ej 3 - Provocar error</h3>
+<pre id="out"></pre>
+<script>
+const out = msg => {
+  console.log(msg);
+  document.getElementById('out').textContent += msg + '\n';
+};
+
+try {
+  console.log(xNoDefinida);
+} catch (e) {
+  out('Error capturado: ' + e.message);
+}
+</script>
+</body>
+</html>

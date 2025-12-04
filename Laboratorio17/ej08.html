@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Ej 8</title></head>
+<body>
+<h3>Ej 8 - Propagación de errores</h3>
+<pre id="out"></pre>
+<script>
+const out = s => document.getElementById('out').textContent += s + '\n';
+
+function nivel2() {
+  try {
+    nonExistentVar;
+  } catch (e) {
+    out('Nivel 2 atrapó el error: ' + e.message);
+    throw e; // volver a lanzar
+  }
+}
+
+function nivel1() {
+  try {
+    nivel2();
+  } catch (e) {
+    out('Nivel 1 recibió el error: ' + e.message);
+    throw e; // vuelve a lanzar
+  }
+}
+
+try {
+  nivel1();
+} catch (e) {
+  out('ERROR FINAL capturado en el nivel superior: ' + e.message);
+}
+</script>
+</body>
+</html>
