@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Ej 5</title></head>
+<body>
+<h3>Ej 5 - console.log genera error</h3>
+<pre id="out"></pre>
+<script>
+const out = msg => {
+  document.getElementById('out').textContent += msg + '\n';
+};
+
+try {
+  // Sabotear console.log para provocar TypeError al invocarlo
+  const originalConsoleLog = console.log;
+  console.log = null;
+  console.log('esto fallará');
+} catch (e) {
+  out('falló');
+} finally {
+  out('siempre se ejecuta');
+  if (typeof originalConsoleLog === 'function') {
+    console.log = originalConsoleLog;
+  }
+}
+</script>
+</body>
+</html>
